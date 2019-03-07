@@ -1,12 +1,13 @@
+// @flow
+
 import React from 'react';
-import { Container, Row, Col } from 'reactstrap';
+import { Container } from 'reactstrap';
+import { Header } from 'components';
 
 const App = () => {
   return (
-    <Container>
-      <Col>
-        <Row>Reactstrap installed</Row>
-      </Col>
+    <Container fluid>
+      <Header />
     </Container>
   );
 };
