@@ -1,7 +1,14 @@
 import React from 'react';
+import { Container, Row, Col } from 'reactstrap';
 
-function App() {
-  return <div>App</div>;
-}
+const App = () => {
+  return (
+    <Container>
+      <Col>
+        <Row>Reactstrap installed</Row>
+      </Col>
+    </Container>
+  );
+};
 
 export default App;
