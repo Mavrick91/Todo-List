@@ -2,12 +2,12 @@
 
 import React from 'react';
 import { Container } from 'reactstrap';
-import { Header } from 'components';
+import Home from 'screens/Home';
 
 const App = () => {
   return (
     <Container fluid>
-      <Header />
+      <Home />
     </Container>
   );
 };

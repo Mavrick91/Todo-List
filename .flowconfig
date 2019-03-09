@@ -3,9 +3,13 @@
 [include]
 
 [libs]
+flow-typed
 
 [lints]
 
 [options]
+module.name_mapper='^components' ->'<PROJECT_ROOT>/src/components'
+module.name_mapper='^screens' ->'<PROJECT_ROOT>/src/screens'
+module.name_mapper='^utils' ->'<PROJECT_ROOT>/src/utils'
 
 [strict]

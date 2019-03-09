@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const CenterCol = styled(Col)`
   text-align: center;
-  font-size: 118px
+  font-size: 118px;
   font-family: 'Shadows Into Light', cursive;
 `;
 
