@@ -11,3 +11,8 @@ export const deleteTodo = (payload: number): ReduxAction => ({
   type: C.DELETE_TODO,
   payload,
 });
+
+export const toggleTodo = (payload: number): ReduxAction => ({
+  type: C.TOGGLE_TODO,
+  payload,
+});

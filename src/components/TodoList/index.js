@@ -1,9 +1,8 @@
 import { connect } from 'react-redux';
 import { compose } from 'recompose';
-import { withStyles } from "@material-ui/core";
-import { deleteTodo } from "modules/todo/action";
+import { withStyles } from '@material-ui/core';
+import { deleteTodo, toggleTodo } from 'modules/todo/action';
 import TodoList from './TodoList';
-
 
 const styles = theme => ({
   button: {
@@ -28,9 +27,13 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = {
   deleteTodo,
+  toggleTodo,
 };
 
 export default compose(
   withStyles(styles),
-  connect(mapStateToProps, mapDispatchToProps),
+  connect(
+    mapStateToProps,
+    mapDispatchToProps,
+  ),
 )(TodoList);
