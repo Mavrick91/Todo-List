@@ -2,7 +2,12 @@ import { createReducer } from 'utils';
 import C from 'utils/constant';
 
 const initialState = {
-  allTodos: [],
+  allTodos: [
+    { id: 0, done: false, task: 'baba' },
+    { id: 1, done: true, task: 'baba' },
+    { id: 2, done: false, task: 'baba' },
+    { id: 3, done: false, task: 'baba' },
+  ],
 };
 
 const HANDLERS = {
