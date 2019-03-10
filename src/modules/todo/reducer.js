@@ -3,7 +3,7 @@ import { find, findIndex, last, propEq, remove, update } from 'ramda';
 import C from './constant';
 
 const initialState = {
-  allTodos: [],
+  allTodos: [{ id: 0, task: 'baba', done: false }],
 };
 
 const HANDLERS = {

@@ -1,7 +1,6 @@
 // @flow
 
 import React from 'react';
-import Button from '@material-ui/core/Button';
 import Fab from '@material-ui/core/Fab';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
@@ -10,17 +9,18 @@ import ClearIcon from '@material-ui/icons/Clear';
 import { Col, Row } from 'reactstrap';
 import styled from 'styled-components';
 
-type Todo = {
+import Button from '../Button';
+
+type Todo = {|
   id: number,
   task: string,
   done: boolean,
-};
+|};
 
 type Props = {
   allTodos: Array<Todo>,
   deleteTodo: Todo => void,
   toggleTodo: Todo => void,
-  classes: any,
 };
 
 const WrapperList = styled(Row)`
@@ -29,12 +29,6 @@ const WrapperList = styled(Row)`
 
 const ColStyled = styled(Col)`
   height: 470px;
-`;
-
-const ButtonStyled = styled(Button)`
-  &:focus {
-    outline: none;
-  }
 `;
 
 const CustomTodo = styled.div`
@@ -77,7 +71,6 @@ const CheckedTask = styled(Fab)`
 
 const TodoList = ({
   allTodos,
-  classes,
   deleteTodo: deleteTodoAction,
   toggleTodo: toggleTodoAction,
 }: Props) => {
@@ -97,23 +90,19 @@ const TodoList = ({
               <TextTodo done={todo.done}>{todo.task}</TextTodo>
             </TextStyled>
             <div>
-              <ButtonStyled
+              <Button
                 variant="contained"
                 color="default"
-                className={classes.button}
-              >
-                Edit
-                <EditIcon className={classes.rightIcon} />
-              </ButtonStyled>
-              <ButtonStyled
+                text="Edit"
+                icon={<EditIcon />}
+              />
+              <Button
                 variant="contained"
                 color="secondary"
-                className={classes.button}
                 onClick={() => deleteTodoAction(todo)}
-              >
-                Delete
-                <DeleteIcon className={classes.rightIcon} />
-              </ButtonStyled>
+                text="Delete"
+                icon={<DeleteIcon />}
+              />
             </div>
           </CustomTodo>
         ))}
