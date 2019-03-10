@@ -1,6 +1,5 @@
 import React from "react";
-import { Header, ReduxForm } from "components";
-import TodoList from "../../components/TodoList";
+import { Header, ReduxForm, TodoList } from "components";
 
 const Home = () => (
   <React.Fragment>

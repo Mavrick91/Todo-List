@@ -1,5 +1,5 @@
 import { reducer as formReducer } from 'redux-form';
-import todoReducer from "components/ReduxForm/reducer";
+import todoReducer from "modules/todo/reducer";
 
 export default {
   todo: todoReducer,

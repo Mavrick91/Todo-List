@@ -1,5 +1,6 @@
 import { createReducer } from 'utils';
-import C from 'utils/constant';
+import { findIndex, propEq, remove } from 'ramda';
+import C from './constant';
 
 const initialState = {
   allTodos: [
@@ -12,6 +13,11 @@ const initialState = {
 
 const HANDLERS = {
   [C.SAVE_TODO]: (state = initialState, action) => ({ allTodos: [...state.allTodos, action.payload] }),
+  [C.DELETE_TODO]: (state = initialState, action) => {
+    const { payload: id } = action;
+    const index = findIndex(propEq('id', id))(state.allTodos);
+    return { allTodos: remove(index, 1, state.allTodos) };
+  },
 };
 
 export default createReducer(initialState, HANDLERS);
