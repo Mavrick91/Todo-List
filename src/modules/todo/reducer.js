@@ -1,6 +1,6 @@
 import { createReducer } from 'utils';
 import { find, findIndex, last, propEq, remove, update } from 'ramda';
-import C from './constant';
+import C from './constants';
 
 const initialState = {
   allTodos: [{ id: 0, task: 'baba', done: false }],

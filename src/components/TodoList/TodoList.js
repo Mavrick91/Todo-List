@@ -9,6 +9,7 @@ import ClearIcon from '@material-ui/icons/Clear';
 import { Col, Row } from 'reactstrap';
 import styled from 'styled-components';
 
+import C from '../../modules/modal/constants'
 import Button from '../Button';
 
 type Todo = {|
@@ -21,6 +22,7 @@ type Props = {
   allTodos: Array<Todo>,
   deleteTodo: Todo => void,
   toggleTodo: Todo => void,
+  toggleModal: (string, boolean) => void,
 };
 
 const WrapperList = styled(Row)`
@@ -73,6 +75,7 @@ const TodoList = ({
   allTodos,
   deleteTodo: deleteTodoAction,
   toggleTodo: toggleTodoAction,
+  toggleModal: toggleModalAction
 }: Props) => {
   return (
     <WrapperList noGutters>
@@ -94,6 +97,7 @@ const TodoList = ({
                 variant="contained"
                 color="default"
                 text="Edit"
+                onClick={() => toggleModalAction(C.EDIT_TODO_MODAL, true)}
                 icon={<EditIcon />}
               />
               <Button

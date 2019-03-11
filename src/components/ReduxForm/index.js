@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import { compose } from 'recompose';
 import { reduxForm } from "redux-form";
-import { saveTodo } from "modules/todo/action";
+import { todoActions } from "modules/todo";
 import ReduxForm from './ReduxForm';
 
 const mapDispatchToProps = {
-  saveTodo,
+  saveTodo: todoActions.saveTodo,
 };
 
 export default compose(

@@ -1,11 +1,12 @@
 import React from "react";
-import { Header, ReduxForm, TodoList } from "components";
+import { Header, ReduxForm, TodoList, Modal } from "components";
 
 const Home = () => (
   <React.Fragment>
     <Header />
     <ReduxForm />
     <TodoList />
+    <Modal />
   </React.Fragment>
 );
 

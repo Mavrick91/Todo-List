@@ -12,12 +12,14 @@
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0",
+    "react-modal": "^3.8.1",
     "react-redux": "^6.0.1",
     "react-scripts": "2.1.5",
     "reactstrap": "^7.1.0",
     "recompose": "^0.30.0",
     "redux": "^4.0.1",
-    "redux-form": "^8.1.0"
+    "redux-form": "^8.1.0",
+    "reselect": "^4.0.0"
   },
   "scripts": {
     "start": "NODE_PATH=src react-scripts start",

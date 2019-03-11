@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { compose } from 'recompose';
-import { deleteTodo, toggleTodo } from 'modules/todo/action';
+import { modalActions } from 'modules/modal';
+import { todoActions } from 'modules/todo';
 import TodoList from './TodoList';
 
 const mapStateToProps = state => {
@@ -10,8 +11,9 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
-  deleteTodo,
-  toggleTodo,
+  deleteTodo: todoActions.deleteTodo,
+  toggleTodo: todoActions.toggleTodo,
+  toggleModal: modalActions.toggleModal,
 };
 
 export default compose(
