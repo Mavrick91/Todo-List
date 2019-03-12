@@ -34,6 +34,12 @@ const HANDLERS = {
 
     return { allTodos: update(index, todo, state.allTodos) };
   },
+  [C.EDIT_TODO]: (state = initialState, action) => {
+    const { payload } = action;
+    const index = findIndex(propEq('id', payload.id))(state.allTodos);
+
+    return { allTodos: update(index, payload, state.allTodos) };
+  },
 };
 
 export default createReducer(initialState, HANDLERS);

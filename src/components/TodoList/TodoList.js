@@ -22,7 +22,7 @@ type Props = {
   allTodos: Array<Todo>,
   deleteTodo: Todo => void,
   toggleTodo: Todo => void,
-  toggleModal: (string, boolean) => void,
+  toggleModal: (string, boolean, Todo) => void,
 };
 
 const WrapperList = styled(Row)`
@@ -97,7 +97,7 @@ const TodoList = ({
                 variant="contained"
                 color="default"
                 text="Edit"
-                onClick={() => toggleModalAction(C.EDIT_TODO_MODAL, true)}
+                onClick={() => toggleModalAction(C.EDIT_TODO_MODAL, true, todo)}
                 icon={<EditIcon />}
               />
               <Button

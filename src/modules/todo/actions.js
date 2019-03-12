@@ -17,8 +17,18 @@ const toggleTodo = (payload: number): ReduxAction => ({
   payload,
 });
 
+const editTodo = (payload: {
+  id: number,
+  task: string,
+  done: boolean,
+}): ReduxAction => ({
+  type: C.EDIT_TODO,
+  payload,
+});
+
 export default {
   saveTodo,
   deleteTodo,
   toggleTodo,
+  editTodo,
 };

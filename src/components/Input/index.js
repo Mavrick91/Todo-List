@@ -21,7 +21,7 @@ const InputStyled = styled(InputStrap)`
   }
 `;
 
-const Input = ({ input }: Props): Node => {
-  return <InputStyled {...input} />;
+const Input = ({ input, ...props }: Props): Node => {
+  return <InputStyled {...input} {...props} autoFocus />;
 };
 export default Input;

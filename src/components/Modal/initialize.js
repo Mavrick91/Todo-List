@@ -25,7 +25,7 @@ const initialize = ({ modalKey }) => WrappedComponent => {
     }
 
     render() {
-      const { open, toggleModal } = this.props;
+      const { open, toggleModal, payload } = this.props;
 
       return (
         <Modal
@@ -34,7 +34,7 @@ const initialize = ({ modalKey }) => WrappedComponent => {
           style={customStyles}
           contentLabel="Example Modal"
         >
-          <WrappedComponent />
+          <WrappedComponent payload={payload} />
         </Modal>
       );
     }
@@ -42,6 +42,7 @@ const initialize = ({ modalKey }) => WrappedComponent => {
 
   const mapStateToProps = state => ({
     open: modalSelectors.getStateModal(state, modalKey),
+    payload: modalSelectors.getPayloadModal(state, modalKey),
   });
   return connect(
     mapStateToProps,
